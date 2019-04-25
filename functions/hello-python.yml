@@ -1,0 +1,8 @@
+provider:
+  name: faas
+  gateway: http://localhost:8080
+functions:
+  hello-python:
+    lang: python3-armhf
+    handler: ./hello-python
+    image: boyroywax/hello-python:latest

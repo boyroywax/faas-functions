@@ -32,6 +32,32 @@ RUN apt-get update && apt-get upgrade && \
         curl \
         git gfortran
 
+RUN apt-get -y remove x264 libx264-dev
+ 
+RUN apt-get install -y --no-install-recommends \
+    libjpeg8-dev libjasper-dev libpng12-dev \ 
+    libtiff5-dev libavcodec-dev libavformat-dev libswscale-dev libdc1394-22-dev \ 
+    libxine2-dev libv4l-dev
+
+RUN cd /usr/include/linux && \ 
+    ln -s -f ../libv4l1-videodev.h videodev.h
+ 
+RUN apt-get install -y --no-install-recommends \ 
+    libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev \  
+    libgtk2.0-dev libtbb-dev qt5-default \ 
+    libatlas-base-dev \ 
+    libmp3lame-dev libtheora-dev \ 
+    libvorbis-dev libxvidcore-dev libx264-dev \ 
+    libopencore-amrnb-dev libopencore-amrwb-dev \ 
+    libavresample-dev \ 
+    x264 v4l-utils
+ 
+# Optional dependencies
+RUN apt-get install -y --no-install-recommends \ 
+    libprotobuf-dev protobuf-compiler \ 
+    libgoogle-glog-dev libgflags-dev \ 
+    libgphoto2-dev libeigen3-dev
+
 RUN curl -sSL https://github.com/openfaas/faas/releases/download/0.13.0/fwatchdog-armhf > /usr/bin/fwatchdog && \ 
     chmod +x /usr/bin/fwatchdog
 

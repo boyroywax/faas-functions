@@ -28,3 +28,6 @@ curl -sSL https://cli.openfaas.com | sudo sh
 
 ## Create Multi-stage builds to decrease openCV size
 https://docs.docker.com/develop/develop-images/multistage-build/
+
+## ImportError: libImath-2_2.so.12: cannot open shared object file: No such file or directory
+https://github.com/EdjeElectronics/TensorFlow-Object-Detection-on-the-Raspberry-Pi/issues/18

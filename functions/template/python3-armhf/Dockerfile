@@ -8,9 +8,6 @@ ARG NUM_PROC=4
 RUN apt-get update && apt-get upgrade && \
     apt-get install -y --no-install-recommends \                              
         software-properties-common build-essential checkinstall cmake pkg-config yasm \
-        libjpeg-dev libtiff5-dev libjasper-dev libpng-dev \
-        libavcodec-dev libavformat-dev libswscale-dev libv4l-dev \
-        libxvidcore-dev libx264-dev \
         libgdk-pixbuf2.0-dev \
         libfontconfig1-dev \
         libcairo2-dev \
@@ -19,10 +16,8 @@ RUN apt-get update && apt-get upgrade && \
         libpango1.0-dev \
         libxft-dev \
         libfreetype6-dev \
-        libpng-dev \
         libgtk2.0-dev \                                                                                                                                   
         libgtk-3-dev \
-        libatlas-base-dev gfortran \ 
         libilmbase-dev libopenexr-dev libgstreamer1.0-dev \ 
         python3-dev \
         python3-setuptools \ 
@@ -44,7 +39,7 @@ RUN cd /usr/include/linux && \
  
 RUN apt-get install -y --no-install-recommends \ 
     libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev \  
-    libgtk2.0-dev libtbb-dev qt5-default \ 
+    libtbb-dev qt5-default \ 
     libatlas-base-dev \ 
     libmp3lame-dev libtheora-dev \ 
     libvorbis-dev libxvidcore-dev libx264-dev \ 

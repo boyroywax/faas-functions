@@ -29,15 +29,15 @@ RUN apt-get update && apt-get upgrade && \
 
 RUN apt-get -y remove x264 libx264-dev
  
-RUN apt-get install -y --no-install-recommends \
-    libjpeg8-dev libjasper-dev libpng12-dev \ 
+RUN apt-get install -y \
+    libjpeg-dev libjasper-dev libpng12-dev \ 
     libtiff5-dev libavcodec-dev libavformat-dev libswscale-dev libdc1394-22-dev \ 
     libxine2-dev libv4l-dev
 
 RUN cd /usr/include/linux && \ 
     ln -s -f ../libv4l1-videodev.h videodev.h
  
-RUN apt-get install -y --no-install-recommends \ 
+RUN apt-get install -y \ 
     libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev \  
     libtbb-dev qt5-default \ 
     libatlas-base-dev \ 

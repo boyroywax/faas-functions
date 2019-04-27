@@ -89,7 +89,8 @@ COPY requirements.txt   .
 RUN pip install --user -r requirements.txt
 
 RUN mkdir -p function
-RUN touch function/__init__.py
+RUN cd function
+RUN touch "__init__.py"
 
 WORKDIR /home/app/function/
 COPY function/requirements.txt	.

@@ -23,6 +23,7 @@ RUN apt-get update && apt-get upgrade && \
         libgtk2.0-dev \                                                                                                                                   
         libgtk-3-dev \
         libatlas-base-dev gfortran \ 
+        libilmbase-dev libopenexr-dev libgstreamer1.0-dev \ 
         python3-dev \
         python3-setuptools \ 
         python3-pip \ 
